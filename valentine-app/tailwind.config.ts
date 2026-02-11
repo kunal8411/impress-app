@@ -13,16 +13,16 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       animation: {
-        "heartbeat": "heartbeat 1.5s ease-in-out infinite",
-        "float": "float 6s ease-in-out infinite",
-        "glow": "glow 2s ease-in-out infinite",
-        "shake": "shake 0.5s ease-in-out",
+        heartbeat: "heartbeat 1.5s ease-in-out infinite",
+        float: "float 6s ease-in-out infinite",
+        glow: "glow 2s ease-in-out infinite",
+        shake: "shake 0.5s ease-in-out",
         "fade-in": "fadeIn 0.8s ease-out forwards",
         "slide-up": "slideUp 0.8s ease-out forwards",
-        "gradient": "gradientShift 8s ease infinite",
+        gradient: "gradientShift 8s ease infinite",
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "bounce-gentle": "bounceGentle 2s ease-in-out infinite",
-        "sparkle": "sparkle 1.5s ease-in-out infinite",
+        sparkle: "sparkle 1.5s ease-in-out infinite",
       },
       keyframes: {
         heartbeat: {
