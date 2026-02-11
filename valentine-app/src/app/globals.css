@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fff0f3;
+  --foreground: #4a1942;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  font-family: "Geist", Arial, Helvetica, sans-serif;
+}
+
+/* Lock scrolling on the question screen only */
+body.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Custom styled scrollbar for the success page */
+body:not(.no-scroll) {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 63, 94, 0.3) transparent;
+}
+
+body:not(.no-scroll)::-webkit-scrollbar {
+  width: 6px;
+}
+
+body:not(.no-scroll)::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+body:not(.no-scroll)::-webkit-scrollbar-thumb {
+  background: rgba(244, 63, 94, 0.3);
+  border-radius: 3px;
+}
+
+/* Gradient Background Animation */
+.valentine-bg {
+  background: linear-gradient(
+    -45deg,
+    #ff9a9e,
+    #fecfef,
+    #fda085,
+    #f5576c,
+    #ff6b81,
+    #fecfef
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.valentine-bg-success {
+  background: linear-gradient(
+    -45deg,
+    #ff9a9e,
+    #fad0c4,
+    #ffecd2,
+    #fcb69f,
+    #ff9a9e
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(180, 70, 100, 0.15);
+}
+
+/* Yes button glow */
+.yes-glow {
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.4),
+    0 0 40px rgba(34, 197, 94, 0.2);
+  animation: yesGlow 2s ease-in-out infinite;
+}
+
+@keyframes yesGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4),
+      0 0 40px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.6),
+      0 0 60px rgba(34, 197, 94, 0.3);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating heart animation */
+@keyframes floatHeart {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.floating-heart {
+  animation: floatHeart var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+/* Star rating */
+.star-btn {
+  transition: all 0.2s ease;
+}
+
+.star-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Hide scrollbar on locked (question) state */
+body.no-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Processing dots animation */
+@keyframes dots {
+  0%,
+  20% {
+    content: ".";
+  }
+  40% {
+    content: "..";
+  }
+  60%,
+  100% {
+    content: "...";
+  }
+}
+
+/* Line reveal animation */
+.line-reveal {
+  opacity: 0;
+  transform: translateY(15px);
+  animation: lineReveal 0.8s ease-out forwards;
+}
+
+@keyframes lineReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heart pattern overlay for success state */
+.heart-pattern {
+  background-image: radial-gradient(
+    circle at 20% 50%,
+    rgba(255, 105, 135, 0.08) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 20%,
+    rgba(255, 182, 193, 0.1) 0%,
+    transparent 40%
+  ),
+  radial-gradient(
+    circle at 50% 80%,
+    rgba(255, 105, 135, 0.06) 0%,
+    transparent 50%
+  );
+}
